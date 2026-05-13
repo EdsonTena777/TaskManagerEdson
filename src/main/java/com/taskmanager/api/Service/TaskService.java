@@ -8,12 +8,12 @@ public interface TaskService {
     
     List<Task> getAll();
 
-    Task getById(Integer id);
+    Task getById(int id);
 
     Task save(Task task);
 
-    Task update(Integer id, Task task);
+    Task update(int id, Task task);
 
-    void delete(Integer id);
+    void delete(int id);
     
 }
