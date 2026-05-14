@@ -4,6 +4,7 @@ API REST desarrollada con Java 17 y Spring Boot para la gestión de tareas.
 
 ## Tecnologías utilizadas
 
+- Netbeans ide 18
 - Java 17
 - Spring Boot
 - Spring Web
@@ -91,6 +92,8 @@ Ejecutar la aplicación:
 ```bash
 mvn spring-boot:run
 ```
+
+o simplemente hacerle un run desde TaskmanagerApiApplication.java dentro del paquete com.taskmanager.api donde esta el main
 
 ## Swagger/OpenAPI
 
