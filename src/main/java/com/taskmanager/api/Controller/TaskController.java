@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/api/tasks")
@@ -26,7 +27,7 @@ public class TaskController {
     }
     
     @PostMapping
-    public ResponseEntity<Task> save(@RequestBody Task task){
+    public ResponseEntity<Task> save(@Valid @RequestBody Task task){
         return ResponseEntity.status(HttpStatus.CREATED).body(taskService.save(task));
     }
     
@@ -41,7 +42,7 @@ public class TaskController {
     }
     
     @PutMapping("/{id}")
-    public ResponseEntity<Task> update(@PathVariable int id, @RequestBody Task task){
+    public ResponseEntity<Task> update(@PathVariable int id, @Valid @RequestBody Task task){
         return ResponseEntity.ok(taskService.update(id, task));
     }
     
