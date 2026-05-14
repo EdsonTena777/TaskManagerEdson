@@ -26,7 +26,7 @@ public class Task {
     @Column(name = "Status", nullable = false, length = 20)
     private TaskStatus status;
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    @Column(name = "CreationDate", nullable = false)
+    @Column(name = "CREATION_DATE", nullable = false)
     private LocalDateTime creationDate;
     
     public Task(){
