@@ -17,7 +17,7 @@ public class Task {
     @Enumerated(EnumType.STRING)
     @Column(name = "Status", nullable = false, length = 20)
     private TaskStatus status;
-    @Column(name = "CreatioDate", nullable = false)
+    @Column(name = "CreationDate", nullable = false)
     private LocalDateTime creationDate;
     
     public Task(){
