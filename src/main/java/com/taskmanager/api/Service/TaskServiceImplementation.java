@@ -1,6 +1,7 @@
 
 package com.taskmanager.api.Service;
 
+import com.taskmanager.api.Exceptions.TaskNotFoundException;
 import com.taskmanager.api.Repository.TaskRepository;
 import org.springframework.stereotype.Service;
 import com.taskmanager.api.ML.Task;
@@ -41,7 +42,7 @@ public class TaskServiceImplementation implements TaskService {
     @Override
     public Task getById(int id){
         return taskRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Task no encontrada"));
+                .orElseThrow(() -> new TaskNotFoundException("Task no encontrada con id: " +id));
     }
     
     @Transactional
