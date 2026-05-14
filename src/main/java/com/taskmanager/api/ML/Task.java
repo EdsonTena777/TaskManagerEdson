@@ -3,6 +3,9 @@ package com.taskmanager.api.ML;
 
 import java.time.LocalDateTime;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 
 @Entity
 @Table(name = "Task")
@@ -10,11 +13,15 @@ public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @NotBlank(message = "El título es obligatorio")
+    @Size(max = 100, message = "El título no puede superar 100 caracteres")
     @Column(name = "Title", nullable = false, length = 100)
     private String title;
+    @Size(max = 500, message = "La descripción no puede superar 500 caracteres")
     @Column(name = "Description", nullable = true, length = 500)
     private String description;
     @Enumerated(EnumType.STRING)
+    @NotNull(message = "El estado es obligatorio")
     @Column(name = "Status", nullable = false, length = 20)
     private TaskStatus status;
     @Column(name = "CreationDate", nullable = false)
