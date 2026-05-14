@@ -120,6 +120,28 @@ http://localhost:8080/swagger-ui/index.html
 }
 ```
 
+## Configuración de Base de Datos
+
+La conexión a Oracle Database se configura en:
+
+```text
+src/main/java/com/taskmanager/api/Configuration/DataSourceConfig.java
+```
+
+Modificar los siguientes valores según la configuración local:
+
+```java
+ds.setUrl("jdbc:oracle:thin:@localhost:1521/orcl");
+
+ds.setUsername("TU_USUARIO");
+ds.setPassword("TU_PASSWORD");
+```
+
+## Creación  de tabla
+
+La tabla `TASK` se encuantra en la carpeta "database" en un archivo llamada task.sql, solo es para pegarlo a una bd y correrlo
+
+
 ## Autor
 
 Desarrollado por Edson Alejandro Tena Rodríguez.
