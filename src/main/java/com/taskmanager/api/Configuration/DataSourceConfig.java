@@ -19,8 +19,8 @@ public class DataSourceConfig {
 
         ds.setUrl("jdbc:oracle:thin:@localhost:1521/orcl");
 
-        ds.setUsername("TaskManagerEdson");
-        ds.setPassword("password1");
+        ds.setUsername("TU_USUARIO");
+        ds.setPassword("TU_CONTRASEÑA");
 
         return ds;
     }
