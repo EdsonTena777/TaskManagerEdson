@@ -6,6 +6,7 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
 @Table(name = "Task")
@@ -24,6 +25,7 @@ public class Task {
     @NotNull(message = "El estado es obligatorio")
     @Column(name = "Status", nullable = false, length = 20)
     private TaskStatus status;
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @Column(name = "CreationDate", nullable = false)
     private LocalDateTime creationDate;
     
